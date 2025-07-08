@@ -82,7 +82,7 @@ fun RegisterScreen(
                     password = password.value
                 )
                 Log.d("RegisterButton", "Datos capturados: $request")
-                viewModel.registerUser(request)
+                viewModel.registerUser(request, navController) // Pasar navController aquí
                 Log.d("RegisterButton", "Datos capturados: $request")
             })
 
