@@ -8,7 +8,6 @@ import com.example.psymed_mobileapplication.ui.presentation.login.LoginComponent
 import com.example.psymed_mobileapplication.ui.presentation.patientList.PatientListScreen
 import com.example.psymed_mobileapplication.ui.presentation.register.RegisterScreen
 import com.example.psymed_mobileapplication.ui.presentation.patient.*
-import com.example.psymed_mobileapplication.ui.routes.Route.TaskList
 
 sealed class Route(val route: String) {
     data object Login : Route("login")
@@ -71,13 +70,20 @@ fun NavGraph(navController: NavHostController) {
         composable(Route.Profile.route) {
             ProfileScreen(navController = navController)
         }
+        composable("personal_info") {
+            // This will be handled by the ProfileScreen tabs
+            ProfileScreen(navController = navController)
+        }
+        composable("settings") {
+            // This will be handled by the ProfileScreen tabs
+            ProfileScreen(navController = navController)
+        }
+        composable("security") {
+            // This will be handled by the ProfileScreen tabs
+            ProfileScreen(navController = navController)
+        }
         composable(Route.Appointments.route) {
             AppointmentsScreen(navController = navController)
         }
     }
-}
-
-@Composable
-fun ProfileScreen(navController: NavHostController) {
-    TODO("Not yet implemented")
 }
